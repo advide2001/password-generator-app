@@ -66,10 +66,13 @@ h6 {
 :root {
   /* Colors */
   /* main colors */
-  --clr-primary: hsl(127, 100%, 82%);
-  --clr-secondary: hsl(0, 100%, 66%);
+  --clr-primary-100: hsl(127, 100%, 82%);
+  --clr-primary-900: hsl(0, 100%, 66%);
+  --clr-primary-300: hsl(42, 91%, 68%);
+  --clr-primary-700: hsl(13, 95%, 66%);
   /* neutral colors */
   --clr-neutral-100: hsl(252, 11%, 91%);
+  --clr-neutral-500: hsl(248, 9%, 53%);
   --clr-neutral-700: hsl(249, 9%, 15%);
   --clr-neutral-800: hsl(248, 14%, 11%);
   --clr-neutral-900: hsl(255, 22%, 4%);
@@ -111,7 +114,7 @@ body {
   gap: 1rem;
 }
 
-.flex-reverse {
+.flex-column {
   flex-direction: column;
 }
 
@@ -119,8 +122,17 @@ body {
   justify-content: space-between;
 }
 
+.flex-align-center {
+  align-items: center;
+}
+
+.normal-text {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-400);
+}
+
 /* COMPONENTS */
-/* BUTTON with icon */
+/* BUTTON WITH ICON */
 .svg-icon-button {
   cursor: pointer;
   text-decoration: none;
@@ -131,7 +143,7 @@ body {
 
   border: 0;
   padding: 0.25em 1.25em;
-  background-color: var(--clr-primary);
+  background-color: var(--clr-primary-100);
   color: var(--clr-neutral-900);
   font-size: var(--fs-xxl);
 }
@@ -155,6 +167,38 @@ body {
   height: 12px;
 }
 
+/* CHECKBOX GROUP */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--clr-neutral-100);
+}
+
+.checkbox__label {
+  padding-left: 0.5rem;
+}
+
+.checkbox--checked {
+  background-color: var(--clr-primary-100);
+  background-image: url(../../assets/images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+
+/* SLIDER */
+
 /* STYLING */
 .card {
   width: 90vw;
@@ -163,4 +207,87 @@ body {
 
 .card-item {
   background-color: var(--clr-neutral-700);
+}
+
+.card__heading {
+  margin: 0 auto;
+  color: var(--clr-primary-100);
+  font-size: var(--fs-xxl);
+}
+
+.card__password {
+  font-size: var(--fs-xxl);
+  font-weight: var(--fw-700);
+  align-items: baseline;
+  padding: 1rem;
+}
+
+.password--placeholder {
+  color: var(--clr-neutral-500);
+}
+
+.card__form {
+  padding: 1.75rem;
+}
+
+.password__length {
+  align-items: center;
+}
+
+.password__length-number {
+  color: var(--clr-primary-100);
+  font-size: var(--fs-xxxl);
+  font-weight: var(--fw-700);
+}
+
+.error-message {
+  padding-left: 0.5rem;
+  color: var(--clr-primary-900);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-400);
+}
+
+.password__strength {
+  background-color: var(--clr-neutral-800);
+  color: var(--clr-neutral-500);
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.password__strength-text {
+  color: var(--clr-neutral-100);
+  padding-right: 0.25rem;
+  font-size: var(--fs-xxl);
+  font-weight: var(--fw-700);
+}
+
+.password__strength-bars {
+  gap: 0.25rem;
+}
+
+.password__strength-bar {
+  height: 2rem;
+  width: 0.75rem;
+  border: 2px solid var(--clr-neutral-100);
+}
+
+.password__strength-bar--too-weak {
+  border: none;
+  background-color: var(--clr-primary-900);
+}
+
+.password__strength-bar--weak {
+  border: none;
+  background-color: var(--clr-primary-700);
+}
+
+.password__strength-bar--medium {
+  border: none;
+  background-color: var(--clr-primary-300);
+}
+
+.password__strength-bar--strong {
+  border: none;
+  background-color: var(--clr-primary-100);
 }

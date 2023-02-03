@@ -13,59 +13,62 @@
 </head>
 
 <body>
-  <article class="card | flex flex-reverse">
-    <div>
-      <h1 class="card__heading">Password Generator</h1>
-    </div>
+  <article class="card | flex flex-column">
+    <h1 class="card__heading">Password Generator</h1>
     <div class="card-item card__password | flex flex-space">
-      <p class="password--placeholder">P4$5W0rD!</p>
+      <p class="password--placeholder">P4$5W0rD!*1234567890</p>
       <button class="svg-icon-button button__copy" data-icon="copy">Copy
       </button>
     </div>
-    <div class="card-item card__form">
-      <form>
-        <div class="password__length | flex flex-space">
-          <p class="normal-text">Character Length</p>
-          <p class="password__length-number">0</p>
+    <form class="card-item card__form | flex flex-column">
+      <div class="password__length | flex flex-space">
+        <p class="normal-text">Character Length</p>
+        <p class="password__length-number">0</p>
+      </div>
+      <div class="password__slider slider-container">
+        <input type="range" min="0" max="20" value="0" class="slider">
+      </div>
+      <div class="password__checkbox checkbox-group">
+        <div class="flex flex-align-center">
+          <div class="checkbox"></div>
+          <input class="checkbox__input" type="checkbox" id="include-uppercase">
+          <label class="checkbox__label" for="include-uppercase">Include Uppercase Letters</label>
         </div>
-        <div class="password__slider slider"></div>
-        <div class="password__checkbox checkbox-group">
-          <div class="checkbox">
-            <input type="checkbox" id="include-uppercase">
-            <label for="include-uppercase">Include Uppercase Letters</label>
-          </div>
 
-          <div class="checkbox">
-            <input type="checkbox" id="include-lowercase">
-            <label for="include-lowercase">Include Lowercase Letters</label>
-          </div>
+        <div class="flex flex-align-center">
+          <div class="checkbox"></div>
+          <input class="checkbox__input" type="checkbox" id="include-lowercase">
+          <label class="checkbox__label" for="include-lowercase">Include Lowercase Letters</label>
+        </div>
 
-          <div class="checkbox">
-            <input type="checkbox" id="include-numbers">
-            <label for="include-numbers">Include Numbers</label>
-          </div>
+        <div class="flex flex-align-center">
+          <div class="checkbox"></div>
+          <input class="checkbox__input" type="checkbox" id="include-numbers">
+          <label class="checkbox__label" for="include-numbers">Include Numbers</label>
+        </div>
 
-          <div class="checkbox">
-            <input type="checkbox" id="include-symbols">
-            <label for="include-symbols">Include Symbols</label>
-          </div>
+        <div class="flex flex-align-center">
+          <div class="checkbox"></div>
+          <input class="checkbox__input" type="checkbox" id="include-symbols">
+          <label class="checkbox__label" for="include-symbols">Include Symbols</label>
         </div>
-        <div class="password__error error-message">
+      </div>
+      <div class="password__error error-message">
+      </div>
+      <div class="password__strength | flex flex-space flex-align-center">
+        <p class="capital-text">Strength</p>
+        <div class="password__strength-bars | flex flex-align-center">
+          <!-- <div class="password__strength-text">Strong</div> -->
+          <div class="password__strength-bar"></div>
+          <div class="password__strength-bar"></div>
+          <div class="password__strength-bar"></div>
+          <div class="password__strength-bar"></div>
         </div>
-        <div class="password__strength | flex flex-space">
-          <p class="capital-text">Strength</p>
-          <div class="password__strength-bar">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-          </div>
-        </div>
-        <button class="svg-icon-button button-main button__generate" data-icon="next">
-          Generate
-        </button>
-      </form>
-    </div>
+      </div>
+      <button class="svg-icon-button button-main button__generate" data-icon="next">
+        Generate
+      </button>
+    </form>
   </article>
 </body>
 
