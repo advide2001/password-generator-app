@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+  <article class="card">
+    <div>
+      <h1 class="card__heading">Password Generator</h1>
+    </div>
+    <div class="card__password">
+      <p class="password--placeholder">P4$5W0rD!</p>
+      <button class="copy-button copy-button--primary">
+        <img src="./assets/images/icon-copy.svg" alt="copy icon">
+      </button>
+    </div>
+    <div class="card__form">
+      <form>
+        <div class="password__length">
+          <p class="normal-text">Character Length</p>
+          <p class="password__length-number">0</p>
+        </div>
+        <div class="password__slider slider"></div>
+        <div class="password__checkbox checkbox-group">
+          <div class="checkbox">
+            <input type="checkbox" id="include-uppercase">
+            <label for="include-uppercase">Include Uppercase Letters</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="include-lowercase">
+            <label for="include-lowercase">Include Lowercase Letters</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="include-numbers">
+            <label for="include-numbers">Include Numbers</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" id="include-symbols">
+            <label for="include-symbols">Include Symbols</label>
+          </div>
+        </div>
+        <div class="password__error error-message">
+        </div>
+        <div class="password__strength">
+          <p class="password__strength-text"></p>
+          <div class="password__strength-bar">
+          </div>
+        </div>
+        <div class="password__generate">
+          <button class="generate-button generate-button--primary">
+            Generate
+            <img src="./assets/images/icon-arrow-right.svg" alt="right arrow icon">
+          </button>
+        </div>
+      </form>
+    </div>
+  </article>
+</body>
+
+</html>
