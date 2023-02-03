@@ -64,7 +64,7 @@ h6 {
 
 /* VARIABLES */
 :root {
-  /* COLORS */
+  /* Colors */
   /* main colors */
   --clr-primary: hsl(127, 100%, 82%);
   --clr-secondary: hsl(0, 100%, 66%);
@@ -74,7 +74,7 @@ h6 {
   --clr-neutral-800: hsl(248, 14%, 11%);
   --clr-neutral-900: hsl(255, 22%, 4%);
 
-  /* FONTS */
+  /* Fonts */
   /* font family */
   --ff-primary: "JetBrains Mono", monospace;
   /* font weights */
@@ -89,4 +89,78 @@ h6 {
   --fs-xl: 1.25rem;
   --fs-xxl: 1.5rem;
   --fs-xxxl: 2rem;
+}
+
+/* GLOBAL STYLES */
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-400);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+
+  /* Center the card */
+  display: grid;
+  place-content: center;
+}
+
+/* UTILITY CLASSES */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-reverse {
+  flex-direction: column;
+}
+
+.flex-space {
+  justify-content: space-between;
+}
+
+/* COMPONENTS */
+/* BUTTON with icon */
+.svg-icon-button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  padding: 0.25em 1.25em;
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-900);
+  font-size: var(--fs-xxl);
+}
+
+.button-main {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.svg-icon-button[data-icon="copy"]::after {
+  content: "";
+  background-image: url(../../assets/images/icon-copy.svg);
+  width: 21px;
+  height: 24px;
+}
+
+.svg-icon-button[data-icon="next"]::after {
+  content: "";
+  background-image: url(../../assets/images/icon-arrow-right.svg);
+  width: 12px;
+  height: 12px;
+}
+
+/* STYLING */
+.card {
+  width: 90vw;
+  max-width: 600px;
+}
+
+.card-item {
+  background-color: var(--clr-neutral-700);
 }

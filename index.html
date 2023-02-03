@@ -13,19 +13,18 @@
 </head>
 
 <body>
-  <article class="card">
+  <article class="card | flex flex-reverse">
     <div>
       <h1 class="card__heading">Password Generator</h1>
     </div>
-    <div class="card__password">
+    <div class="card-item card__password | flex flex-space">
       <p class="password--placeholder">P4$5W0rD!</p>
-      <button class="copy-button copy-button--primary">
-        <img src="./assets/images/icon-copy.svg" alt="copy icon">
+      <button class="svg-icon-button button__copy" data-icon="copy">Copy
       </button>
     </div>
-    <div class="card__form">
+    <div class="card-item card__form">
       <form>
-        <div class="password__length">
+        <div class="password__length | flex flex-space">
           <p class="normal-text">Character Length</p>
           <p class="password__length-number">0</p>
         </div>
@@ -53,17 +52,18 @@
         </div>
         <div class="password__error error-message">
         </div>
-        <div class="password__strength">
-          <p class="password__strength-text"></p>
+        <div class="password__strength | flex flex-space">
+          <p class="capital-text">Strength</p>
           <div class="password__strength-bar">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
           </div>
         </div>
-        <div class="password__generate">
-          <button class="generate-button generate-button--primary">
-            Generate
-            <img src="./assets/images/icon-arrow-right.svg" alt="right arrow icon">
-          </button>
-        </div>
+        <button class="svg-icon-button button-main button__generate" data-icon="next">
+          Generate
+        </button>
       </form>
     </div>
   </article>
