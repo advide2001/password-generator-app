@@ -14,6 +14,7 @@ const controlLengthSlider = function (currentValue) {
 };
 
 const init = function () {
+  formView.addHandlerPageLoad(model.state);
   formView.addHandlerPasswordLengthSlider(controlLengthSlider);
 };
 init();

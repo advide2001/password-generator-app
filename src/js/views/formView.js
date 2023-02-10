@@ -8,6 +8,17 @@ class FormView {
     });
   }
 
+  _resetPasswordLength(value = 8) {
+    this._passwordLengthSliderElement.value = value;
+    this._passwordLengthElement.textContent = value;
+  }
+
+  addHandlerPageLoad(state) {
+    window.addEventListener("load", () => {
+      this._resetPasswordLength(state.options.passwordLength);
+    });
+  }
+
   renderPasswordLength(currentValue) {
     this._passwordLengthElement.textContent = currentValue;
   }
