@@ -9,3 +9,7 @@ export const state = {
     allowSymbols: false,
   },
 };
+
+export function updatePasswordLength(newLength) {
+  state.options.passwordLength = newLength;
+}
