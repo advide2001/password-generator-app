@@ -9,6 +9,8 @@ function printCurrentState() {
 const controlLengthSlider = function (currentValue) {
   // 1. Update passwordLength in the state
   model.updatePasswordLength(currentValue);
+  // 2. Update the change to the UI
+  formView.renderPasswordLength(currentValue);
 };
 
 const init = function () {
