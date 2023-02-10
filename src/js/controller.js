@@ -7,7 +7,8 @@ function printCurrentState() {
 }
 
 const controlLengthSlider = function (currentValue) {
-  console.log(currentValue);
+  // 1. Update passwordLength in the state
+  model.updatePasswordLength(currentValue);
 };
 
 const init = function () {
