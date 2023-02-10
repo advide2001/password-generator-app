@@ -1,10 +1,15 @@
 class FormView {
-  _passwordLengthSlider = document.querySelector(".slider");
+  _passwordLengthSliderElement = document.querySelector(".slider");
+  _passwordLengthElement = document.querySelector(".password__length-number");
 
   addHandlerPasswordLengthSlider(handlerFunction) {
-    this._passwordLengthSlider.addEventListener("input", (e) => {
+    this._passwordLengthSliderElement.addEventListener("input", (e) => {
       handlerFunction(e.target.value);
     });
+  }
+
+  renderPasswordLength(currentValue) {
+    this._passwordLengthElement.textContent = currentValue;
   }
 }
 
