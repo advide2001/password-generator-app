@@ -172,7 +172,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  cursor: pointer;
 }
 
 .checkbox__input {
@@ -183,10 +182,12 @@ body {
   width: 1.5rem;
   height: 1.5rem;
   border: 2px solid var(--clr-neutral-100);
+  cursor: pointer;
 }
 
 .checkbox__label {
   padding-left: 0.5rem;
+  cursor: pointer;
 }
 
 .checkbox--checked {
