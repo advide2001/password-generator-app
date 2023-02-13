@@ -178,7 +178,7 @@ body {
   display: none;
 }
 
-.checkbox {
+.checkbox__box {
   width: 1.5rem;
   height: 1.5rem;
   border: 2px solid var(--clr-neutral-100);
@@ -190,7 +190,7 @@ body {
   cursor: pointer;
 }
 
-.checkbox--checked {
+.checkbox__box--checked {
   background-color: var(--clr-primary-100);
   background-image: url(../../assets/images/icon-check.svg);
   background-repeat: no-repeat;
