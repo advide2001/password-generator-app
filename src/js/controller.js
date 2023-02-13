@@ -13,8 +13,25 @@ const controlLengthSlider = function (currentValue) {
   formView.renderPasswordLength(currentValue);
 };
 
-const controlPasswordOptions = function (optionChecked) {
-  formView.renderPasswordOptions(optionChecked);
+const controlPasswordOptions = function (optionSelected) {
+  // 1. Update the state
+  switch (optionSelected) {
+    case "include-lowercase":
+      model.updateAllowLowercase();
+      break;
+    case "include-uppercase":
+      model.updateAllowUppercase();
+      break;
+    case "include-numbers":
+      model.updateAllowNumbers();
+      break;
+    case "include-symbols":
+      model.updateAllowSymbols();
+      break;
+  }
+  printCurrentState();
+  // 2. Update the UI
+  formView.renderPasswordOptions(optionSelected);
 };
 
 const init = function () {

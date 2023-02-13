@@ -14,18 +14,18 @@ export function updatePasswordLength(newLength) {
   state.options.passwordLength = newLength;
 }
 
-export function updateAllowUppercase(newValue) {
-  state.options.allowUppercase = newValue;
+export function updateAllowUppercase() {
+  state.options.allowUppercase = !state.options.allowUppercase;
 }
 
-export function updateAllowLowercase(newValue) {
-  state.options.allowLowercase = newValue;
+export function updateAllowLowercase() {
+  state.options.allowLowercase = !state.options.allowLowercase;
 }
 
-export function updateAllowNumbers(newValue) {
-  state.options.allowNumbers = newValue;
+export function updateAllowNumbers() {
+  state.options.allowNumbers = !state.options.allowLowercase;
 }
 
-export function updateAllowSymbols(newValue) {
-  state.options.allowSymbols = newValue;
+export function updateAllowSymbols() {
+  state.options.allowSymbols = !state.options.allowSymbols;
 }
