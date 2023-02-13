@@ -29,7 +29,6 @@ const controlPasswordOptions = function (optionSelected) {
       model.updateAllowSymbols();
       break;
   }
-  printCurrentState();
   // 2. Update the UI
   formView.renderPasswordOptions(optionSelected);
 };
