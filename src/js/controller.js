@@ -13,8 +13,13 @@ const controlLengthSlider = function (currentValue) {
   formView.renderPasswordLength(currentValue);
 };
 
+const controlPasswordOptions = function (optionChecked) {
+  formView.renderPasswordOptions(optionChecked);
+};
+
 const init = function () {
   formView.addHandlerPageLoad(model.state);
   formView.addHandlerPasswordLengthSlider(controlLengthSlider);
+  formView.addHandlerPasswordOptions(controlPasswordOptions);
 };
 init();
