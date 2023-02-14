@@ -26,6 +26,51 @@ class FormView {
     this._passwordLengthElement.textContent = value;
   }
 
+  // This function generates the markup for the too weak password
+  _generateTooWeakPasswordMarkup() {
+    return `
+        <div class="password__strength-bars | flex flex-align-center">
+          <div class="password__strength-text">too weak</div>
+          <div class="password__strength-bar password__strength-bar--too-weak"></div>
+          <div class="password__strength-bar"></div>
+          <div class="password__strength-bar"></div>
+          <div class="password__strength-bar"></div>
+        </div>`;
+  }
+  // This function generates the markup for the weak password
+  generateWeakPasswordMarkup() {
+    return `
+        <div class="password__strength-bars | flex flex-align-center">
+          <div class="password__strength-text">weak</div>
+          <div class="password__strength-bar password__strength-bar--weak"></div>
+          <div class="password__strength-bar password__strength-bar--weak"></div>
+          <div class="password__strength-bar"></div>
+          <div class="password__strength-bar"></div>
+        </div>`;
+  }
+  // This function generates the markup for the medium password
+  generateMediumPasswordMarkup() {
+    return `
+        <div class="password__strength-bars | flex flex-align-center">
+          <div class="password__strength-text">medium</div>
+          <div class="password__strength-bar password__strength-bar--medium"></div>
+          <div class="password__strength-bar password__strength-bar--medium"></div>
+          <div class="password__strength-bar password__strength-bar--medium"></div>
+          <div class="password__strength-bar"></div>
+        </div>`;
+  }
+  // This function generates the markup for the strong password
+  generateStrongPasswordMarkup() {
+    return `
+        <div class="password__strength-bars | flex flex-align-center">
+          <div class="password__strength-text">strong</div>
+          <div class="password__strength-bar password__strength-bar--strong"></div>
+          <div class="password__strength-bar password__strength-bar--strong"></div>
+          <div class="password__strength-bar password__strength-bar--strong"></div>
+          <div class="password__strength-bar password__strength-bar--strong"></div>
+        </div>`;
+  }
+
   // This function handles the initial state of the page when it loads
   addHandlerPageLoad(state) {
     window.addEventListener("load", () => {
@@ -88,6 +133,20 @@ class FormView {
         );
         break;
     }
+  }
+
+  // This function renders the password strength bars based on the password strength
+  renderPasswordStrength(passwordStrength) {
+    let markup = "";
+    const passwordStrengthBarElement = document.querySelector(
+      ".password__strength-bars"
+    );
+    passwordStrengthBarElement.innerHTML = "";
+    if (passwordStrength == 0) markup = this._generateTooWeakPasswordMarkup();
+    if (passwordStrength == 1) markup = this.generateWeakPasswordMarkup();
+    if (passwordStrength == 2) markup = this.generateMediumPasswordMarkup();
+    if (passwordStrength == 3) markup = this.generateStrongPasswordMarkup();
+    passwordStrengthBarElement.innerHTML = markup;
   }
 }
 
