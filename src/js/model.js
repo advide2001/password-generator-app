@@ -1,5 +1,6 @@
 export const state = {
-  passwordStrength: "", // 0-3
+  newPasswordStrength: 0, // 0-3
+  oldPasswordStrength: 0, // 0-3
   passwordGenerated: "", // Generated from api
   options: {
     passwordLength: 8, // Length of password
@@ -28,4 +29,12 @@ export function updateAllowNumbers() {
 
 export function updateAllowSymbols() {
   state.options.allowSymbols = !state.options.allowSymbols;
+}
+
+export function updatePasswordStrength(newStrength) {
+  state.newPasswordStrength = newStrength;
+}
+
+export function calculatePasswordStrength() {
+  console.log("calculating password strength");
 }

@@ -11,6 +11,8 @@ const controlLengthSlider = function (currentValue) {
   model.updatePasswordLength(currentValue);
   // 2. Update the change to the UI
   formView.renderPasswordLength(currentValue);
+  // 3. Calculate the password strength
+  model.calculatePasswordStrength();
 };
 
 const controlPasswordOptions = function (optionSelected) {
@@ -31,6 +33,8 @@ const controlPasswordOptions = function (optionSelected) {
   }
   // 2. Update the UI
   formView.renderPasswordOptions(optionSelected);
+  // 3. Calculate the password strength
+  model.calculatePasswordStrength();
 };
 
 const init = function () {
