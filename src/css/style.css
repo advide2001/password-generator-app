@@ -257,6 +257,10 @@ body {
   color: var(--clr-neutral-500);
 }
 
+.password--actual {
+  color: var(--clr-neutral-100);
+}
+
 .card__form {
   padding: 1.75rem;
 }
