@@ -148,6 +148,15 @@ class FormView {
     if (passwordStrength == 3) markup = this.generateStrongPasswordMarkup();
     passwordStrengthBarElement.innerHTML = markup;
   }
+
+  // This function adds event listeners to the generate button
+  addHandlerGeneratePassword(handlerFunction) {
+    const passwordGenerateButton = document.querySelector(".button__generate");
+    passwordGenerateButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      handlerFunction();
+    });
+  }
 }
 
 export default new FormView();

@@ -47,9 +47,17 @@ const controlPasswordOptions = function (optionSelected) {
   controlPasswordStrength();
 };
 
+const controlGeneratePassword = function () {
+  // 1. generate the password
+  model.generatePassword();
+  // 2. render the password to the UI
+  passwordView.renderGeneratedPassword(model.state.passwordGenerated);
+};
+
 const init = function () {
   formView.addHandlerPageLoad(model.state);
   formView.addHandlerPasswordLengthSlider(controlLengthSlider);
   formView.addHandlerPasswordOptions(controlPasswordOptions);
+  formView.addHandlerGeneratePassword(controlGeneratePassword);
 };
 init();

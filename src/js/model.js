@@ -18,6 +18,10 @@ export const state = {
 };
 
 // getter and setter to view and modify the state
+export function updatePasswordGenerated(newPassword) {
+  state.passwordGenerated = newPassword;
+}
+
 export function updatePasswordLength(newLength) {
   state.options.passwordLength = newLength;
 }
@@ -108,4 +112,10 @@ function computePasswordStrength(passwordScore) {
     passwordStrengthLevel = 3;
 
   return passwordStrengthLevel;
+}
+
+export function generatePassword() {
+  // -------- Make API call here ----------------
+  // DUMMY PASSWORD
+  updatePasswordGenerated("dummyPassword");
 }
