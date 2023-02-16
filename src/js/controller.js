@@ -80,6 +80,9 @@ const controlGeneratePassword = function () {
 };
 
 function controlCopyButton() {
+  // Gaurd clause to prevent copying empty password
+  if (!model.state.passwordGenerated) return;
+
   // 1. copy the password to the clipboard from the element
   passwordView.copyPasswordToClipboard();
   // 2. render the copied message to the UI
