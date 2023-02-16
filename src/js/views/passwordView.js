@@ -11,6 +11,10 @@ class PasswordView {
     console.log("copied");
   }
 
+  resetCopiedMessage() {
+    // TODO: change the text in the button from "Copied" to "Copy"
+  }
+
   renderGeneratedPassword(password) {
     if (this._passwordDisplay.classList.contains("password--placeholder")) {
       console.log("placeholder");

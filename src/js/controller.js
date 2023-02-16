@@ -85,6 +85,9 @@ function controlCopyButton() {
   // 2. render the copied message to the UI
   passwordView.renderCopiedMessage();
   // 3. reset the copied message after 5 seconds
+  setTimeout(() => {
+    passwordView.resetCopiedMessage();
+  }, 2000);
 }
 
 const init = function () {
