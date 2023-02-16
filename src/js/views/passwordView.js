@@ -3,7 +3,7 @@ class PasswordView {
   _copyButton = document.querySelector(".button__copy");
 
   copyPasswordToClipboard() {
-    // TODO: copy password to clipboard
+    navigator.clipboard.writeText(this._passwordDisplay.textContent);
   }
 
   renderCopiedMessage() {
