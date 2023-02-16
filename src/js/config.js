@@ -11,3 +11,10 @@ export const STRONG_PASSWORD_SCORE =
 
 // number of password strength categories
 export const NUMBER_OF_STRENGTH_LEVELS = 4;
+
+// Warning messages
+export const WARNING_MESSAGES = {
+  NO_OPTIONS_SELECTED: "Please select at least one option",
+  WEAK_PASSWORD:
+    "Password is too weak. Please select more options or increase password length",
+};
