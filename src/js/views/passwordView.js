@@ -1,13 +1,12 @@
 class PasswordView {
+  _passwordDisplay = document.querySelector(".password__display");
   renderGeneratedPassword(password) {
-    const passwordDisplay = document.querySelector(".password__display");
-
-    if (passwordDisplay.classList.contains("password--placeholder")) {
+    if (this._passwordDisplay.classList.contains("password--placeholder")) {
       console.log("placeholder");
-      passwordDisplay.classList.remove("password--placeholder");
-      passwordDisplay.classList.add("password--actual");
+      this._passwordDisplay.classList.remove("password--placeholder");
+      this._passwordDisplay.classList.add("password--actual");
     }
-    passwordDisplay.textContent = password;
+    this._passwordDisplay.textContent = password;
   }
 }
 export default new PasswordView();
