@@ -79,10 +79,19 @@ const controlGeneratePassword = function () {
   passwordView.renderGeneratedPassword(model.state.passwordGenerated);
 };
 
+function controlCopyButton() {
+  // 1. copy the password to the clipboard from the element
+  passwordView.copyPasswordToClipboard();
+  // 2. render the copied message to the UI
+  passwordView.renderCopiedMessage();
+  // 3. reset the copied message after 5 seconds
+}
+
 const init = function () {
   formView.addHandlerPageLoad(model.state);
   formView.addHandlerPasswordLengthSlider(controlLengthSlider);
   formView.addHandlerPasswordOptions(controlPasswordOptions);
   formView.addHandlerGeneratePassword(controlGeneratePassword);
+  passwordView.addHandlerCopyButton(controlCopyButton);
 };
 init();
