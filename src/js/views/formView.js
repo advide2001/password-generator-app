@@ -149,6 +149,12 @@ class FormView {
     passwordStrengthBarElement.innerHTML = markup;
   }
 
+  // This functions renders an error message to the UI
+  renderWarningMessage(message) {
+    const errorMessageElement = document.querySelector(".password__error");
+    errorMessageElement.textContent = message;
+  }
+
   // This function adds event listeners to the generate button
   addHandlerGeneratePassword(handlerFunction) {
     const passwordGenerateButton = document.querySelector(".button__generate");
