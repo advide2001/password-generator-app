@@ -9,8 +9,15 @@ function printCurrentState() {
 function controlPasswordStrength() {
   // 1. Store the previous password stregth, and render strength bar only when strength changes
   const previousPasswordStrength = model.state.passwordStrength;
-  // 2. Calculate the password strength
-  model.calculatePasswordStrength();
+  // 2. Calculate the password strength, only when at least one option is selected
+  if (
+    model.state.options.allowLowercase ||
+    model.state.options.allowUppercase ||
+    model.state.options.allowNumbers ||
+    model.state.options.allowSymbols
+  ) {
+    model.calculatePasswordStrength();
+  }
   // 3. Render the strength bar only when strength changes
   if (previousPasswordStrength !== model.state.passwordStrength)
     formView.renderPasswordStrength(model.state.passwordStrength);
