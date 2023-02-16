@@ -1,3 +1,4 @@
+import { WARNING_MESSAGES } from "./config.js";
 import * as model from "./model.js";
 import formView from "./views/formView.js";
 import passwordView from "./views/passwordView.js";
@@ -55,9 +56,26 @@ const controlPasswordOptions = function (optionSelected) {
 };
 
 const controlGeneratePassword = function () {
-  // 1. generate the password
+  // 1. Validate the password generation
+  // 1.1. if no options are selected, render an warning message and return
+  if (
+    !model.state.options.allowLowercase &&
+    !model.state.options.allowUppercase &&
+    !model.state.options.allowNumbers &&
+    !model.state.options.allowSymbols
+  ) {
+    formView.renderWarningMessage(WARNING_MESSAGES.NO_OPTIONS_SELECTED);
+    return;
+  }
+  // 1.2. if password strength is weak, render a warning message and return
+  if (model.state.passwordStrength === 0) {
+    formView.renderWarningMessage(WARNING_MESSAGES.WEAK_PASSWORD);
+    return;
+  }
+
+  // 2. generate the password
   model.generatePassword();
-  // 2. render the password to the UI
+  // 3. render the password to the UI
   passwordView.renderGeneratedPassword(model.state.passwordGenerated);
 };
 
