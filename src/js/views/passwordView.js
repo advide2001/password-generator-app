@@ -7,13 +7,11 @@ class PasswordView {
   }
 
   renderCopiedMessage() {
-    // TODO: change the text in the button from "Copy" to "Copied"
-    console.log("copied");
+    this._copyButton.textContent = "Copied";
   }
 
   resetCopiedMessage() {
-    // TODO: change the text in the button from "Copied" to "Copy"
-    console.log("reset");
+    this._copyButton.textContent = "Copy";
   }
 
   renderGeneratedPassword(password) {
