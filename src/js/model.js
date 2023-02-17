@@ -90,7 +90,7 @@ function computeCharacters() {
   if (state.options.allowUppercase) characterCount += 26;
   if (state.options.allowLowercase) characterCount += 26;
   if (state.options.allowNumbers) characterCount += 10;
-  if (state.options.allowSymbols) characterCount += 32;
+  if (state.options.allowSymbols) characterCount += 29;
   return characterCount;
 }
 
@@ -128,7 +128,15 @@ function computePasswordStrength(passwordScore) {
 }
 
 export function generatePassword() {
-  // -------- Make API call here ----------------
-  // DUMMY PASSWORD
-  updatePasswordGenerated("dummyPassword");
+  // 1. build the character set based on the options
+  const characterSet = buildCharaterSet();
+  // 2. generate a random password
+  let password = "";
+  for (let i = 0; i < state.options.passwordLength; i++) {
+    password += characterSet.charAt(
+      Math.floor(Math.random() * characterSet.length)
+    );
+  }
+  // 3. update the state
+  updatePasswordGenerated(password);
 }
