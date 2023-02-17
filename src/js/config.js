@@ -1,5 +1,5 @@
 const MIN_CHARACTER_COUNT = 10; // When only numbers are allowed
-const MAX_CHARACTER_COUNT = 1; // When all characters are allowed
+const MAX_CHARACTER_COUNT = 91; // When all characters are allowed
 const MIN_PASSWORD_LENGTH = 5; // Minimum length of password
 const MAX_PASSWORD_LENGTH = 20; // Maximum length of password
 
