@@ -72,6 +72,19 @@ export function calculatePasswordStrength() {
 // ----------------
 
 // compute the number of characters in the password based on options
+
+function buildCharaterSet() {
+  let characterSet = "";
+  if (state.options.allowUppercase)
+    characterSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  if (state.options.allowLowercase)
+    characterSet += "abcdefghijklmnopqrstuvwxyz";
+  if (state.options.allowNumbers) characterSet += "0123456789";
+  if (state.options.allowSymbols)
+    characterSet += "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+  return characterSet;
+}
+
 function computeCharacters() {
   let characterCount = 0;
   if (state.options.allowUppercase) characterCount += 26;
