@@ -2,6 +2,7 @@ import {
   WEAK_PASSWORD_SCORE,
   STRONG_PASSWORD_SCORE,
   NUMBER_OF_STRENGTH_LEVELS,
+  CHARACTER_SETS,
 } from "./config";
 
 // State of the application
@@ -75,13 +76,10 @@ export function calculatePasswordStrength() {
 
 function buildCharaterSet() {
   let characterSet = "";
-  if (state.options.allowUppercase)
-    characterSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  if (state.options.allowLowercase)
-    characterSet += "abcdefghijklmnopqrstuvwxyz";
-  if (state.options.allowNumbers) characterSet += "0123456789";
-  if (state.options.allowSymbols)
-    characterSet += "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+  if (state.options.allowUppercase) characterSet += CHARACTER_SETS.UPPERCASE;
+  if (state.options.allowLowercase) characterSet += CHARACTER_SETS.LOWERCASE;
+  if (state.options.allowNumbers) characterSet += CHARACTER_SETS.NUMBERS;
+  if (state.options.allowSymbols) characterSet += CHARACTER_SETS.SYMBOLS;
   return characterSet;
 }
 

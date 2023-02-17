@@ -18,3 +18,11 @@ export const WARNING_MESSAGES = {
   WEAK_PASSWORD:
     "Password is too weak. Please select more options or increase password length",
 };
+
+// Character sets
+export const CHARACTER_SETS = {
+  UPPERCASE: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  LOWERCASE: "abcdefghijklmnopqrstuvwxyz",
+  NUMBERS: "0123456789",
+  SYMBOLS: "!@#$%^&*()_+~`|}{[]:;?><,./-=",
+};
